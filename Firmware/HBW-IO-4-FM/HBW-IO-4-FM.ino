@@ -28,7 +28,10 @@
 //*******************************************************************
 
 #define HARDWARE_VERSION 0x00   // muss = supported_types index1 im XML (=0)! Sonst HMW-Generic
-#define FIRMWARE_VERSION 0x0303 // XML verlangt index2 >= 0x0303 (GE) -> meldet 3.03
+#ifndef FIRMWARE_VERSION
+#define FIRMWARE_VERSION 0x0303 // XML verlangt index2 >= 0x0303 (GE) -> meldet 3.03.
+                                // Per Build-Flag -DFIRMWARE_VERSION=0x0304 ueberschreibbar (Update-Test).
+#endif
 #define HMW_DEVICETYPE   0x10   // 16 dec = supported_types index0 im XML (hmw_io_4_fm.xml)
 
 #define NUM_CHANNELS     4
